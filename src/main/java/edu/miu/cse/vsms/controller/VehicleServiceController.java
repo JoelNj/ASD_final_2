@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/api/v1/services")
 @RequiredArgsConstructor
@@ -20,9 +22,8 @@ public class VehicleServiceController {
     // Assign a service to an employee
     @PostMapping
     public ResponseEntity<VehicleServiceResponseDto> assignService(@RequestBody ServiceRequestDto request) {
-        // Write your code here
-
-        return null;
+      Optional<VehicleServiceResponseDto> vehicleServiceResponseDto = vehicleService.assignService(request);
+        return ResponseEntity.ok(vehicleServiceResponseDto.get());
     }
     
 }

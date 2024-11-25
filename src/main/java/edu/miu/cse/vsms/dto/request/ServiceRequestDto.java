@@ -1,9 +1,13 @@
 package edu.miu.cse.vsms.dto.request;
 
+import edu.miu.cse.vsms.model.Employee;
+
 public record ServiceRequestDto(
-        Long employeeId,
+        Long id,
         String serviceName,
         double cost,
-        String vehicleType
+        String vehicleType,
+        Employee employee
 ) {
 }
+
